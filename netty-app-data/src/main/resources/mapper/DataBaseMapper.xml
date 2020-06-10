@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cloudwalk.data.mapper.DataBaseMapper" >
+	<resultMap id="BaseResultMap" type="cn.cloudwalk.common.dto.RealTimeFeatureResultDTO">
+	    <id 	column="id" 		        property="id" 		    jdbcType="VARCHAR" />
+	    <result column="feature" 		    property="feature" 		jdbcType="LONGVARCHAR" />
+	    <result column="status" 		    property="status" 		jdbcType="INTEGER" />
+	    <result column="province" 			property="province" 	jdbcType="VARCHAR" />
+	    <result column="city" 				property="city" 		jdbcType="VARCHAR" />
+	    <result column="score" 				property="score" 		jdbcType="FLOAT" />
+	    <result column="create_time" 		property="createTime" 	jdbcType="BIGINT" />
+	    <result column="update_time" 		property="updateTime" 	jdbcType="BIGINT" />
+	</resultMap>
+
+	<update id="insert" parameterType="cn.cloudwalk.common.dto.DataBaseDTO" >
+		insert into cw_verteran_feature (id, feature, status, province, city, score, create_time, update_time)
+	  	value(#{id, jdbcType=VARCHAR}, #{feature, jdbcType=LONGVARCHAR},#{status, jdbcType=INTEGER},
+	  	#{province, jdbcType=VARCHAR},#{city, jdbcType=VARCHAR},#{score, jdbcType=FLOAT},#{createTime, jdbcType=VARCHAR},#{updateTime, jdbcType=VARCHAR})
+	</update>
+
+	<delete id="deleteById" parameterType="java.lang.String">
+		delete from cw_verteran_feature
+		where id = #{id, jdbcType=VARCHAR}
+	</delete>
+
+	<select id="selectById" parameterType="java.lang.String" resultType="cn.cloudwalk.common.dto.DataBaseDTO">
+		select * from cw_verteran_feature
+		where id = #{id, jdbcType=VARCHAR}
+	</select>
+
+	<update id="update" parameterType="cn.cloudwalk.common.dto.DataBaseDTO">
+		update cw_verteran_feature
+		set feature = #{feature, jdbcType=LONGVARCHAR}, status = #{status, jdbcType=INTEGER},
+		province = #{province, jdbcType=VARCHAR}, city = #{city, jdbcType=VARCHAR}, score = #{score, jdbcType=FLOAT},
+		update_time = #{updateTime, jdbcType=VARCHAR}
+		where id = #{id, jdbcType=VARCHAR}
+	</update>
+
+</mapper>

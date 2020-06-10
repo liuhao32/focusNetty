@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cloudwalk.data.mapper.RealTimeFeatureMapper" >
+	<resultMap id="BaseResultMap" type="cn.cloudwalk.common.dto.RealTimeFeatureResultDTO">
+	    <id 	column="id" 		        property="id" 		    jdbcType="VARCHAR" />
+	    <result column="feature" 		    property="feature" 		jdbcType="LONGVARCHAR" />
+	    <result column="status" 		    property="status" 		jdbcType="INTEGER" />
+	    <result column="province" 			property="province" 	jdbcType="VARCHAR" />
+	    <result column="city" 				property="city" 		jdbcType="VARCHAR" />
+		<result column="score" 				property="score" 		jdbcType="FLOAT" />
+		<result column="create_time" 		property="createTime" 	jdbcType="VARCHAR" />
+	    <result column="update_time" 		property="updateTime" 	jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="query" parameterType="cn.cloudwalk.common.dto.RealTimeFeatureQueryDTO" resultMap="BaseResultMap">
+		select id, feature, status, province ,city, score, create_time, update_time
+	  	  from cw_verteran_feature
+		 where 
+		    id = #{id, jdbcType=VARCHAR}
+	</select>
+
+</mapper>

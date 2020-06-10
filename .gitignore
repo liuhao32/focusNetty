@@ -1,0 +1,3 @@
+# Project exclude paths
+/netty-app-facade/target/
+/netty-app-starter/target/
