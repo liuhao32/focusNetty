@@ -49,15 +49,8 @@
     <protobuf.version>3.5.0</protobuf.version>
 
     <com.netflix.feign.version>8.18.0</com.netflix.feign.version>
-    <cloudwalk-common.version>3.0.0-Brussels-SRX</cloudwalk-common.version>
-    <cloudwalk-resource-manager.version>1.1.1</cloudwalk-resource-manager.version>
-    <cloudwalk-device-manager.version>2.0.1</cloudwalk-device-manager.version>
-    <cloudwalk.security.version>1.3.2</cloudwalk.security.version>
-    <cloudwalk-engin-manager.version>2.2.1-INNOVATE-SNAPSHOT</cloudwalk-engin-manager.version>
-    <cloudwalk-operationlog-manager.version>3.0.1.20200325-RELEASE</cloudwalk-operationlog-manager.version>
-    <cloudwalk-device-sdk.version>2.0.4-SNAPSHOT</cloudwalk-device-sdk.version>
+
     <maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
-    <cloudwalk-sharding-algorithm.version>2.0.1.20191009-RELEASE</cloudwalk-sharding-algorithm.version>
     <jasypt-spring-boot-starter.version>1.18</jasypt-spring-boot-starter.version>
     <redisson.version>3.10.0</redisson.version>
     <ai-cloud-task.version>1.0.4-SNAPSHOT</ai-cloud-task.version>
