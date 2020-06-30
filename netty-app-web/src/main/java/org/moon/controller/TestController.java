@@ -1,6 +1,8 @@
 package org.moon.controller;
 
 import org.moon.common.annotation.Permission;
+import org.moon.common.bean.dto.Order;
+import org.moon.service.OrderService;
 import org.moon.service.TestService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +21,8 @@ public class TestController {
     @Resource
     TestService testService;
 
+    @Resource
+    OrderService orderService;
     @Permission(value = {"p_menu_edit"})
     @RequestMapping(value = "selectById", method = RequestMethod.POST)
     public void selectById(@RequestParam int id) {
@@ -29,5 +33,12 @@ public class TestController {
     @RequestMapping(value = "selectBy", method = RequestMethod.POST)
     public void selectBy(@RequestParam int id) {
         testService.print(id);
+    }
+
+    @RequestMapping(value = "orderService", method = RequestMethod.POST)
+    public void orderService() {
+        Order order = new Order();
+        order.setSource("pc");
+        orderService.orderService(order);
     }
 }
