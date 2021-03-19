@@ -42,7 +42,7 @@
     <jsqlparser.version>2.1</jsqlparser.version>
     <HikariCP.version>3.3.1</HikariCP.version>
     <fastjson.version>1.2.67</fastjson.version>
-    <tomcat.version>8.5.51</tomcat.version>
+    <tomcat.version>10.0.4</tomcat.version>
     <xstream.version>1.4.11.1</xstream.version>
     <guava.version>18.0</guava.version>
     <validation-api.version>2.0.1.Final</validation-api.version>
